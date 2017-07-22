@@ -18,17 +18,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/photo_placeholder">
-                <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/detail_photo_height"
-                     />
-
-                <View
+                    android:scaleType="centerCrop" />
+                <!--suppress AndroidLintContentDescription -->
+                <!-- Review 1 , above scaleTrype added and the following View commented out-->
+                <!--<View
                     android:layout_width="match_parent"
                     android:layout_height="112dp"
-                    android:background="@drawable/photo_background_protection" />
+                    android:background="@drawable/photo_background_protection" />-->
 
             </FrameLayout>
 
@@ -92,7 +92,10 @@
         </FrameLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <ImageButton android:id="@+id/share_fab"
+
+
+
+    <!--<ImageButton android:id="@+id/share_fab"
         android:stateListAnimator="@anim/fab_state_list_anim"
         android:background="@drawable/add_fab_background"
         android:layout_gravity="bottom|end"
@@ -102,6 +105,19 @@
         android:layout_height="56dp"
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
+        android:contentDescription="@string/action_share" />-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:contentDescription="@string/action_share"
+        android:elevation="6dp"
+        android:src="@drawable/ic_share"
+        app:backgroundTint="@color/theme_accent"
+        app:elevation="@dimen/fab_press_translation_z"
+        app:fabSize="normal" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
